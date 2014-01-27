@@ -364,7 +364,7 @@ namespace Raven.Database.Indexing
 
 		public void Init(string name)
 		{
-			if (Configuration.RunInMemory)
+			if (Configuration.RunInMemory || !Configuration.UsePerformanceCounters)
 			{
 				useCounters = false;
 				return;

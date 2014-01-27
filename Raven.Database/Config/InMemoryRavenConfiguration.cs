@@ -578,6 +578,17 @@ namespace Raven.Database.Config
 			}
 		}
 
+	    public bool UsePerformanceCounters
+	    {
+	        get 
+            {
+                var existing = Settings["Raven/UsePerformanceCounters"];
+	            bool value;
+	            return bool.TryParse(existing, out value) ? value : false;
+	        }
+            set { Settings["Raven/UsePerformanceCounters"] = value.ToString(); }
+	    }
+
 		/// <summary>
 		/// What sort of transaction mode to use. 
 		/// Allowed values: 
